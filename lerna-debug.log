@@ -1,0 +1,11 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   scope: '@mazongguan-code\\core',
+0 silly argv   globs: [],
+0 silly argv   lernaVersion: '3.16.4',
+0 silly argv   '$0': 'C:\\Users\\yeongjet\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
+0 silly argv   pkg: '\\@mazongguan-common'
+0 silly argv }
+1 notice cli v3.16.4
+2 verbose rootPath D:\project\mazongguan\mazongguan-code
+3 error
