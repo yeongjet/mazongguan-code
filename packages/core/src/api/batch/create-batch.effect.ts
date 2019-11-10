@@ -7,28 +7,36 @@ import { neverNullable } from '@mazongguan-common/filter'
 import { option } from 'io-ts-types/lib/option'
 import { optional } from '@mazongguan-common/validator'
 import { BatchModel } from '../../model'
+// import { validator$, Joi } from '@marblejs/middleware-joi'
+import { validator$, Joi } from '@yeongjet/middleware-joi'
+// const validator$ = requestValidator$({
+//     body: t.intersection([
+//         t.type({
+//             enterprise_id: t.number,
+//             batch_name: t.string,
+//             code_count: t.number,
+//             loss_rate: t.number,
+//             label_type: t.number,
+//             application_id: t.string,
+//             isv_application_id: t.string,
+//             code_type: t.number,
+//             product_id: t.number
+//         }),
+//         t.partial({
+//             export_column: t.type({
+//                 inside_code: t.type({
+//                     code_type: t.number
+//                 })
+//             })
+//         })
+//     ])
+// })
 
-const validator$ = requestValidator$({
-    body: t.intersection([
-        t.type({
-            enterprise_id: t.number,
-            batch_name: t.string,
-            code_count: t.number,
-            loss_rate: t.number,
-            label_type: t.number,
-            application_id: t.string,
-            isv_application_id: t.string,
-            code_type: t.number,
-            product_id: t.number
-        }),
-        t.partial({
-            export_column: t.type({
-                inside_code: t.type({
-                    code_type: t.number
-                })
-            })
-        })
-    ])
+const validator = validator$({
+    body: Joi.object({
+        enterprise_id: Joi.number().integer().min(1),
+        
+    })
 })
 
 export const createBatch$ = EffectFactory.matchPath('/batch')

@@ -4,12 +4,14 @@
   "license": "ISC",
   "main": "lib/app.js",
   "typings": "lib/app.d.ts",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "build": "tsc"
   },
   "dependencies": {
     "@mazongguan-common/filter": "^0.0.18",
-    "@mazongguan-common/validator": "^0.0.20",
-    "io-ts-types": "^0.5.1"
+    "@mazongguan-common/validator": "^0.0.20"
   }
 }
