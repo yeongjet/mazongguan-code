@@ -36,8 +36,8 @@ export class BatchModel {
     })
     label_type: number
 
-    @Column('string', { nullable: true, comment: '微信申请单号' })
-    application_id: string
+    @Column('int8', { nullable: true, comment: '微信申请单号' })
+    application_id: number
 
     @Column('string', { nullable: true, comment: '微信外部申请单号' })
     isv_application_id: string
@@ -76,7 +76,7 @@ export class BatchModel {
     @Column('string', { nullable: true, comment: '解压密码' })
     unzip_password: string
 
-    @Column('jsonb', { nullable: true, comment: '需要导出的列' })
+    @Column('jsonb', { nullable: false, comment: '需要导出的列' })
     export_column: {
         pallet_code?: ExportOption
         box_code?: ExportOption
